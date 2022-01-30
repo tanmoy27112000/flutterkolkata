@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class TabWallOfFame extends StatefulWidget {
   const TabWallOfFame({Key? key}) : super(key: key);
@@ -10,6 +11,17 @@ class TabWallOfFame extends StatefulWidget {
 class _TabWallOfFameState extends State<TabWallOfFame> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return LayoutBuilder(
+      builder: (BuildContext context, BoxConstraints constraints) {
+        return Scaffold(
+          body: Center(
+            child: LottieBuilder.network(
+              "https://assets5.lottiefiles.com/packages/lf20_0qvqjlcc.json",
+              height: constraints.maxHeight * 0.3,
+            ),
+          ),
+        );
+      },
+    );
   }
 }

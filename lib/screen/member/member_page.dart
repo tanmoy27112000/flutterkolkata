@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutterkolkata/helper/responsive_layout.dart';
+import 'package:flutterkolkata/screen/member/mobile_member_page.dart';
+import 'package:flutterkolkata/screen/member/tab_member_page.dart';
 import 'package:flutterkolkata/screen/member/web_member_page.dart';
 
 class MemberPage extends StatefulWidget {
@@ -14,10 +16,8 @@ class _MemberPageState extends State<MemberPage> {
   Widget build(BuildContext context) {
     return const ResponsiveWidget(
       largeScreen: WebMemberPage(),
-      mediumScreen: Scaffold(
-        backgroundColor: Colors.red,
-      ),
-      smallScreen: Scaffold(),
+      mediumScreen: TabMemberPage(),
+      smallScreen: MobileMemberPage(),
     );
   }
 }

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
-class TabHomepage extends StatefulWidget {
-  const TabHomepage({Key? key}) : super(key: key);
+class MobileEventPage extends StatefulWidget {
+  const MobileEventPage({Key? key}) : super(key: key);
 
   @override
-  State<TabHomepage> createState() => _TabHomepageState();
+  State<MobileEventPage> createState() => _MobileEventPageState();
 }
 
-class _TabHomepageState extends State<TabHomepage> {
+class _MobileEventPageState extends State<MobileEventPage> {
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(

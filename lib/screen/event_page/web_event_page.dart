@@ -138,7 +138,7 @@ class EventWidget extends StatelessWidget {
                     ),
                     Container(
                       height: 100,
-                      width: 200,
+                      width: constraints.maxWidth * 0.12,
                       decoration: BoxDecoration(
                         color: Colors.grey.shade200,
                         image: const DecorationImage(
