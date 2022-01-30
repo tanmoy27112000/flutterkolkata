@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutterkolkata/gen/assets.gen.dart';
 import 'package:flutterkolkata/widget/app_bar/app_bar.dart';
+import 'package:flutterkolkata/widget/button/button_widget.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -52,7 +53,7 @@ class _WebEventPageState extends State<WebEventPage> {
                   crossAxisSpacing: 30,
                   childAspectRatio: 16 / 9,
                 ),
-                itemCount: 5,
+                itemCount: 1,
                 itemBuilder: (BuildContext context, int index) {
                   return EventWidget(
                     constraints: constraints,
@@ -160,22 +161,26 @@ class EventWidget extends StatelessWidget {
           ),
           Align(
             alignment: Alignment.bottomRight,
-            child: Container(
-              margin: const EdgeInsets.all(8.0),
-              height: 50,
-              width: 150,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(10),
-                boxShadow: kElevationToShadow[3],
-              ),
-              child: Center(
-                child: Text(
-                  "Attend event",
-                  style: GoogleFonts.poppins(
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.grey.shade900,
+            child: InkWell(
+              onTap: () => launchURL(
+                  "https://www.meetup.com/flutter-kolkata/events/283582627/"),
+              child: Container(
+                margin: const EdgeInsets.all(8.0),
+                height: 50,
+                width: 150,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(10),
+                  boxShadow: kElevationToShadow[3],
+                ),
+                child: Center(
+                  child: Text(
+                    "Attend event",
+                    style: GoogleFonts.poppins(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.grey.shade900,
+                    ),
                   ),
                 ),
               ),
