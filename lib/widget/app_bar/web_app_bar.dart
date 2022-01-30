@@ -1,6 +1,8 @@
+import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterkolkata/constant/image_url.dart';
 import 'package:flutterkolkata/constant/text_style.dart';
+import 'package:flutterkolkata/widget/button/button_widget.dart';
 
 class WebAppbar extends StatelessWidget {
   const WebAppbar({
@@ -30,31 +32,45 @@ class WebAppbar extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
-                      Text(
-                        "Wall of fame",
-                        style: KTextstyle.grey600bold,
-                      ),
-                      Text(
-                        "Upcoming Events",
-                        style: KTextstyle.grey600bold,
-                      ),
-                      Text(
-                        "Members",
-                        style: KTextstyle.grey600bold,
-                      ),
-                      Container(
-                        height: 40,
-                        width: 130,
-                        decoration: BoxDecoration(
-                          color: Colors.blue,
-                          borderRadius: BorderRadius.circular(100),
-                          boxShadow: kElevationToShadow[3],
+                      GestureDetector(
+                        onTap: () =>
+                            Beamer.of(context).beamToNamed("/wall_of_fame"),
+                        child: Text(
+                          "Wall of fame",
+                          style: KTextstyle.grey600bold,
                         ),
-                        child: const Center(
-                          child: Text(
-                            "Join us",
-                            style: TextStyle(
-                              color: Colors.white,
+                      ),
+                      GestureDetector(
+                        onTap: () => Beamer.of(context).beamToNamed("/events"),
+                        child: Text(
+                          "Upcoming Events",
+                          style: KTextstyle.grey600bold,
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: () => Beamer.of(context).beamToNamed("/members"),
+                        child: Text(
+                          "Members",
+                          style: KTextstyle.grey600bold,
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: () => launchURL(
+                            "https://www.meetup.com/flutter-kolkata/"),
+                        child: Container(
+                          height: 40,
+                          width: 130,
+                          decoration: BoxDecoration(
+                            color: Colors.blue,
+                            borderRadius: BorderRadius.circular(100),
+                            boxShadow: kElevationToShadow[3],
+                          ),
+                          child: const Center(
+                            child: Text(
+                              "Join us",
+                              style: TextStyle(
+                                color: Colors.white,
+                              ),
                             ),
                           ),
                         ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutterkolkata/gen/assets.gen.dart';
+import 'package:flutterkolkata/widget/powered_by/web_powered_by.dart';
 import 'package:flutterkolkata/widget/welcome_widget/web_welcome_widget.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class WebHomepage extends StatefulWidget {
   const WebHomepage({Key? key}) : super(key: key);
@@ -28,52 +29,90 @@ class _WebHomepageState extends State<WebHomepage> {
                 constraints: constraints,
                 scrollcontroller: _scrollController,
               ),
-              Container(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
-                height: constraints.maxHeight * 0.6,
-                width: constraints.maxWidth,
-                color: Colors.grey.shade100,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    SizedBox(
-                      height: 0.05 * constraints.maxHeight,
-                    ),
-                    Text(
-                      "What we do at Flutter Kolkata?",
-                      style: GoogleFonts.poppins(
-                        fontWeight: FontWeight.w700,
-                        fontSize: 40,
-                        letterSpacing: 1,
-                        color: Colors.grey.shade800,
-                      ),
-                    ),
-                    Row(
-                      children: <Widget>[
-                        ...List.generate(
-                          4,
-                          (index) => Expanded(
-                            child: Container(
-                              margin: const EdgeInsets.all(16),
-                              width: constraints.maxWidth / 3,
-                              height: constraints.maxHeight * 0.4,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(16),
-                                color: Colors.white,
-                                boxShadow: kElevationToShadow[3],
-                              ),
-                            ),
-                          ),
-                        ).toList()
-                      ],
-                    )
-                  ],
-                ),
+              PoweredbyWidget(
+                constraints: constraints,
               ),
               Container(
                 height: constraints.maxHeight * 0.4,
                 width: constraints.maxWidth,
-                color: Colors.grey.shade100,
+                decoration: BoxDecoration(
+                  color: Colors.grey.shade100,
+                  border: Border(
+                    top: BorderSide(
+                      color: Colors.grey.shade300,
+                      width: 1,
+                    ),
+                  ),
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Expanded(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Expanded(
+                            child: Center(
+                              child: Assets.images.flutterKolkata.image(),
+                            ),
+                          ),
+                          SizedBox(
+                            width: 0.4 * constraints.maxWidth,
+                          ),
+                          Expanded(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                Text(
+                                  "Explore",
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.grey.shade700,
+                                    fontSize: 20,
+                                  ),
+                                ),
+                                const Text("Become member"),
+                                const Text("Google Developer Groups"),
+                                const Text("Code of conduct"),
+                                const Text("Partner with us"),
+                              ],
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(right: 128.0),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                Text(
+                                  "Connect",
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.grey.shade700,
+                                    fontSize: 20,
+                                  ),
+                                ),
+                                const Text("Facebook"),
+                                const Text("Instagram"),
+                                const Text("Twitter"),
+                                const Text("Whatsapp"),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.all(16.0),
+                      child: Text(
+                        "Flutter and the related logo are trademarks of Google LLC.\n© 2022 Flutter Kolkata, All rights reserved.",
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ],
+                ),
               )
             ],
           ),
