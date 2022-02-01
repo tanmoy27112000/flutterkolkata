@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutterkolkata/screen/member/mobile_page/mobile_member_widget.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:flutterkolkata/constant/member_list.dart';
-import 'package:flutterkolkata/screen/member/mobile_page/mobile_member_page.dart';
 
 class MobileMemberPage extends StatefulWidget {
   const MobileMemberPage({Key? key}) : super(key: key);
