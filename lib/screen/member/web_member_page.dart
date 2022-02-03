@@ -94,7 +94,7 @@ class _WebHallOfFameState extends State<WebMemberPage> {
                         Text(memberList[index].description),
                         Padding(
                           padding: const EdgeInsets.symmetric(
-                            vertical: 16.0,
+                            vertical: 5.0,
                             horizontal: 32,
                           ),
                           child: Row(
