@@ -16,7 +16,7 @@ Widget tabSocialWidget({
             );
           },
           icon: Icon(icon),
-          iconSize: widthvalue * 0.02,
+          iconSize: widthvalue * 0.03,
         )
       : const SizedBox.shrink();
 }

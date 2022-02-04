@@ -59,7 +59,7 @@ class _TabMemberPageState extends State<TabMemberPage> {
                     vertical: constraints.maxHeight * 0.05,
                   ),
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 4,
+                    crossAxisCount: 3,
                     mainAxisSpacing: constraints.maxHeight * 0.15,
                     crossAxisSpacing: constraints.maxWidth * 0.04,
                   ),

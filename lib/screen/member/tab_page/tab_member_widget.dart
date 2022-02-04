@@ -23,14 +23,14 @@ class TabMemberWidget extends StatelessWidget {
         CircleAvatar(
           backgroundColor: Colors.grey,
           backgroundImage: NetworkImage(memberList[index].imageUrl),
-          radius: widthValue * 0.04,
+          radius: widthValue * 0.045,
         ),
         Text(
           memberList[index].name,
           style: TextStyle(
             color: Colors.grey.shade800,
             fontWeight: FontWeight.w800,
-            fontSize: widthValue * 0.017,
+            fontSize: widthValue * 0.02,
           ),
         ),
         Text(
@@ -38,7 +38,7 @@ class TabMemberWidget extends StatelessWidget {
           style: TextStyle(
             color: Colors.grey.shade600,
             fontWeight: FontWeight.w800,
-            fontSize: widthValue * 0.01,
+            fontSize: widthValue * 0.015,
           ),
         ),
         Text(

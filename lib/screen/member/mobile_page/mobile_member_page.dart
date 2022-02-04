@@ -28,7 +28,7 @@ class _MobileMemberPageState extends State<MobileMemberPage> {
                   "Our community members",
                   textAlign: TextAlign.center,
                   style: GoogleFonts.poppins(
-                    fontWeight: FontWeight.w800,
+                    fontWeight: FontWeight.w600,
                     fontSize: constraints.maxWidth * 0.055,
                     letterSpacing: 1,
                     color: Colors.grey.shade800,
