@@ -4,7 +4,7 @@ import 'package:flutterkolkata/widget/button/button_widget.dart';
 Widget socialWidget({String? url, required IconData icon}) {
   return url != null
       ? Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(4.0),
           child: IconButton(
             onPressed: () {
               launchURL(
