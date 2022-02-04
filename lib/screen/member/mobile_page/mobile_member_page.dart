@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterkolkata/constant/member_list.dart';
 import 'package:flutterkolkata/screen/member/mobile_page/mobile_member_widget.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -27,7 +28,7 @@ class _MobileMemberPageState extends State<MobileMemberPage> {
                   "Our community members",
                   textAlign: TextAlign.center,
                   style: GoogleFonts.poppins(
-                    fontWeight: FontWeight.w800,
+                    fontWeight: FontWeight.w600,
                     fontSize: constraints.maxWidth * 0.055,
                     letterSpacing: 1,
                     color: Colors.grey.shade800,
@@ -54,7 +55,7 @@ class _MobileMemberPageState extends State<MobileMemberPage> {
                   height: constraints.maxHeight * 0.1,
                 ),
                 // Member Names
-                for (int i = 0; i < 20; i++) ...[
+                for (int i = 0; i < memberList.length; i++) ...[
                   MobileMemberWidget(
                     heightValue: constraints.maxHeight,
                     widthValue: constraints.maxWidth,
