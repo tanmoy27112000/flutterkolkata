@@ -45,7 +45,7 @@ class _MobileHomepageState extends State<MobileHomepage> {
                         });
                       },
                       icon: const Icon(
-                        Icons.more_vert,
+                        Icons.menu,
                       ),
                     ),
                   ],
