@@ -29,23 +29,24 @@ class _MobileHomepageState extends State<MobileHomepage> {
               Padding(
                 padding: const EdgeInsets.only(top: 8),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 120),
-                      child: Image.network(
-                        ImageUrl.flutterIcon,
-                        height: 40,
-                      ),
+                    const Spacer(flex: 3),
+                    Image.network(
+                      ImageUrl.flutterIcon,
+                      height: 40,
                     ),
-                    IconButton(
-                      onPressed: () {
-                        setState(() {
-                          _scaffoldKey.currentState!.openEndDrawer();
-                        });
-                      },
-                      icon: const Icon(
-                        Icons.menu,
+                    const Spacer(flex: 2),
+                    Expanded(
+                      child: IconButton(
+                        onPressed: () {
+                          setState(() {
+                            _scaffoldKey.currentState!.openEndDrawer();
+                          });
+                        },
+                        icon: const Icon(
+                          Icons.menu,
+                        ),
                       ),
                     ),
                   ],
