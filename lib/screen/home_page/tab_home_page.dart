@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutterkolkata/gen/assets.gen.dart';
+import 'package:flutterkolkata/widget/drawer.dart';
 import 'package:flutterkolkata/widget/powered_by/tab_powered_by.dart';
 import 'package:flutterkolkata/widget/welcome_widget/tab_welcome_widget.dart';
 
@@ -18,6 +19,12 @@ class _TabHomepageState extends State<TabHomepage> {
     return LayoutBuilder(
       builder: (BuildContext context, BoxConstraints constraints) {
         return Scaffold(
+          endDrawer: const CustomDrawer(),
+          appBar: AppBar(
+            iconTheme: const IconThemeData(color: Colors.black),
+            elevation: 0,
+            backgroundColor: Colors.transparent,
+          ),
           body: ListView(
             controller: _scrollController,
             children: [

@@ -10,6 +10,7 @@ class CustomDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       child: ListView(
+        padding: const EdgeInsets.symmetric(vertical: 20),
         children: [
           ListTile(
             onTap: () => context.go("/wall_of_fame"),
@@ -18,7 +19,6 @@ class CustomDrawer extends StatelessWidget {
               style: KTextstyle.grey600bold,
             ),
           ),
-          const Divider(),
           ListTile(
             onTap: () => context.go("/events"),
             title: Text(
@@ -26,7 +26,6 @@ class CustomDrawer extends StatelessWidget {
               style: KTextstyle.grey600bold,
             ),
           ),
-          const Divider(),
           ListTile(
             onTap: () => context.go("/members"),
             title: Text(
@@ -34,7 +33,6 @@ class CustomDrawer extends StatelessWidget {
               style: KTextstyle.grey600bold,
             ),
           ),
-          const Divider(),
           GestureDetector(
             onTap: () => launchURL("https://www.meetup.com/flutter-kolkata/"),
             child: Container(
