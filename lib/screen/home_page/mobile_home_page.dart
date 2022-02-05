@@ -31,10 +31,12 @@ class _MobileHomepageState extends State<MobileHomepage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
+
                     const Spacer(flex: 3),
                     Image.network(
                       ImageUrl.flutterIcon,
                       height: 40,
+
                     ),
                     const Spacer(flex: 2),
                     Expanded(
@@ -69,7 +71,8 @@ class _MobileHomepageState extends State<MobileHomepage> {
                 ),
                 child: Column(
                   children: [
-                    Assets.images.flutterKolkata.image(height: 150),
+                    Assets.images.flutterKolkata
+                        .image(height: constraints.maxHeight * 0.2),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
