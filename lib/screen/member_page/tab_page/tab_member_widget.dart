@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutterkolkata/constant/member_list.dart';
+import 'package:flutterkolkata/model/member_model.dart';
+import 'package:flutterkolkata/screen/member_page/tab_page/tab_social.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:flutterkolkata/widget/atoms/social_widget.dart';
-import 'package:flutterkolkata/screen/member/tab_page/tab_social.dart';
 
 class TabMemberWidget extends StatelessWidget {
-  final int index;
+  final MemberModel member;
   final double widthValue;
   final double heightValue;
   const TabMemberWidget(
-      {required this.index,
+      {required this.member,
       required this.heightValue,
       required this.widthValue,
       Key? key})
@@ -22,11 +22,11 @@ class TabMemberWidget extends StatelessWidget {
       children: <Widget>[
         CircleAvatar(
           backgroundColor: Colors.grey,
-          backgroundImage: NetworkImage(memberList[index].imageUrl),
+          backgroundImage: NetworkImage(member.imageUrl),
           radius: widthValue * 0.045,
         ),
         Text(
-          memberList[index].name,
+          member.name,
           style: TextStyle(
             color: Colors.grey.shade800,
             fontWeight: FontWeight.w800,
@@ -34,7 +34,7 @@ class TabMemberWidget extends StatelessWidget {
           ),
         ),
         Text(
-          memberList[index].title,
+          member.title,
           style: TextStyle(
             color: Colors.grey.shade600,
             fontWeight: FontWeight.w800,
@@ -42,7 +42,7 @@ class TabMemberWidget extends StatelessWidget {
           ),
         ),
         Text(
-          memberList[index].description,
+          member.description,
           textAlign: TextAlign.center,
           style: TextStyle(fontSize: widthValue * 0.015),
         ),
@@ -54,15 +54,15 @@ class TabMemberWidget extends StatelessWidget {
           children: <Widget>[
             tabSocialWidget(
                 icon: FontAwesomeIcons.linkedin,
-                url: memberList[index].linkedInUrl,
+                url: member.linkedInUrl,
                 widthvalue: widthValue),
             tabSocialWidget(
                 icon: FontAwesomeIcons.facebook,
-                url: memberList[index].facebookUrl,
+                url: member.facebookUrl,
                 widthvalue: widthValue),
             tabSocialWidget(
                 icon: FontAwesomeIcons.github,
-                url: memberList[index].githubUrl,
+                url: member.githubUrl,
                 widthvalue: widthValue),
           ],
         ),

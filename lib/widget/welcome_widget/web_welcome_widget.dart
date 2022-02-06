@@ -32,7 +32,7 @@ class WebWelcomeWidget extends StatelessWidget {
                       "Welcome to Flutter Kolkata",
                       style: GoogleFonts.poppins(
                         fontWeight: FontWeight.w700,
-                        fontSize: 40,
+                        fontSize: constraints.maxWidth * 0.02,
                         letterSpacing: 1,
                         color: Colors.grey.shade800,
                       ),
@@ -44,7 +44,7 @@ class WebWelcomeWidget extends StatelessWidget {
                         textAlign: TextAlign.center,
                         style: GoogleFonts.poppins(
                           fontWeight: FontWeight.w400,
-                          fontSize: 20,
+                          fontSize: constraints.maxWidth * 0.01,
                           color: Colors.grey.shade800,
                         ),
                       ),

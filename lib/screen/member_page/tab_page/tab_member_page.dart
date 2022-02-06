@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:flutterkolkata/constant/member_list.dart';
+import 'package:flutterkolkata/model/member_model.dart';
+import 'package:flutterkolkata/screen/member_page/tab_page/tab_member_widget.dart';
 import 'package:flutterkolkata/widget/app_bar/app_bar.dart';
-import 'package:flutterkolkata/screen/member/tab_page/tab_member_widget.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class TabMemberPage extends StatefulWidget {
-  const TabMemberPage({Key? key}) : super(key: key);
-
+  final List<MemberModel> memeberList;
+  const TabMemberPage({Key? key, required this.memeberList}) : super(key: key);
   @override
   State<TabMemberPage> createState() => _TabMemberPageState();
 }
@@ -63,10 +63,10 @@ class _TabMemberPageState extends State<TabMemberPage> {
                     mainAxisSpacing: constraints.maxHeight * 0.15,
                     crossAxisSpacing: constraints.maxWidth * 0.04,
                   ),
-                  itemCount: 20,
+                  itemCount: widget.memeberList.length,
                   itemBuilder: (BuildContext context, int index) {
                     return TabMemberWidget(
-                        index: 0,
+                        member: widget.memeberList[index],
                         heightValue: constraints.maxHeight,
                         widthValue: constraints.maxWidth);
                   },

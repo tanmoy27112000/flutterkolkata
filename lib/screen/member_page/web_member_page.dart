@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutterkolkata/constant/member_list.dart';
+import 'package:flutterkolkata/model/member_model.dart';
 import 'package:flutterkolkata/widget/app_bar/app_bar.dart';
 import 'package:flutterkolkata/widget/atoms/social_widget.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class WebMemberPage extends StatefulWidget {
-  const WebMemberPage({Key? key}) : super(key: key);
+  final List<MemberModel> memeberList;
+  const WebMemberPage({Key? key, required this.memeberList}) : super(key: key);
 
   @override
   State<WebMemberPage> createState() => _WebHallOfFameState();
@@ -58,8 +59,9 @@ class _WebHallOfFameState extends State<WebMemberPage> {
                     mainAxisSpacing: 30,
                     crossAxisSpacing: 30,
                   ),
-                  itemCount: memberList.length,
+                  itemCount: widget.memeberList.length,
                   itemBuilder: (BuildContext context, int index) {
+                    MemberModel member = widget.memeberList[index];
                     return Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
@@ -67,13 +69,12 @@ class _WebHallOfFameState extends State<WebMemberPage> {
                           padding: const EdgeInsets.all(16.0),
                           child: CircleAvatar(
                             backgroundColor: Colors.grey,
-                            backgroundImage:
-                                NetworkImage(memberList[index].imageUrl),
+                            backgroundImage: NetworkImage(member.imageUrl),
                             radius: constraints.maxWidth * 0.05,
                           ),
                         ),
                         Text(
-                          memberList[index].name,
+                          member.name,
                           style: TextStyle(
                             color: Colors.grey.shade800,
                             fontWeight: FontWeight.w800,
@@ -81,7 +82,7 @@ class _WebHallOfFameState extends State<WebMemberPage> {
                           ),
                         ),
                         Text(
-                          memberList[index].title,
+                          member.title,
                           style: TextStyle(
                             color: Colors.grey.shade600,
                             fontWeight: FontWeight.w800,
@@ -91,7 +92,7 @@ class _WebHallOfFameState extends State<WebMemberPage> {
                         const SizedBox(
                           height: 2,
                         ),
-                        Text(memberList[index].description),
+                        Text(member.description),
                         Padding(
                           padding: const EdgeInsets.symmetric(
                             vertical: 5.0,
@@ -102,19 +103,19 @@ class _WebHallOfFameState extends State<WebMemberPage> {
                             children: <Widget>[
                               socialWidget(
                                 icon: FontAwesomeIcons.linkedin,
-                                url: memberList[index].linkedInUrl,
+                                url: member.linkedInUrl,
                               ),
                               socialWidget(
                                 icon: FontAwesomeIcons.facebook,
-                                url: memberList[index].facebookUrl,
+                                url: member.facebookUrl,
                               ),
                               socialWidget(
                                 icon: FontAwesomeIcons.instagram,
-                                url: memberList[index].instagramUrl,
+                                url: member.instagramUrl,
                               ),
                               socialWidget(
                                 icon: FontAwesomeIcons.github,
-                                url: memberList[index].githubUrl,
+                                url: member.githubUrl,
                               ),
                             ],
                           ),

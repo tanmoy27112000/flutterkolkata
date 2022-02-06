@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutterkolkata/constant/member_list.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutterkolkata/model/member_model.dart';
 import 'package:flutterkolkata/widget/atoms/social_widget.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class MobileMemberWidget extends StatelessWidget {
-  final int index;
+  final MemberModel member;
   final double widthValue;
   final double heightValue;
   const MobileMemberWidget(
-      {required this.index,
+      {required this.member,
       required this.heightValue,
       required this.widthValue,
       Key? key})
@@ -25,12 +26,12 @@ class MobileMemberWidget extends StatelessWidget {
             padding: const EdgeInsets.all(16.0),
             child: CircleAvatar(
               backgroundColor: Colors.grey,
-              backgroundImage: NetworkImage(memberList[index].imageUrl),
+              backgroundImage: NetworkImage(member.imageUrl),
               radius: widthValue * 0.17,
             ),
           ),
           Text(
-            memberList[index].name,
+            member.name,
             style: TextStyle(
               color: Colors.grey.shade800,
               fontWeight: FontWeight.w800,
@@ -38,7 +39,7 @@ class MobileMemberWidget extends StatelessWidget {
             ),
           ),
           Text(
-            memberList[index].title,
+            member.title,
             style: TextStyle(
               color: Colors.grey.shade600,
               fontWeight: FontWeight.w800,
@@ -48,7 +49,7 @@ class MobileMemberWidget extends StatelessWidget {
           const SizedBox(
             height: 2,
           ),
-          Text(memberList[index].description),
+          Text(member.description),
           Padding(
             padding: const EdgeInsets.symmetric(
               vertical: 16.0,
@@ -59,19 +60,19 @@ class MobileMemberWidget extends StatelessWidget {
               children: <Widget>[
                 socialWidget(
                   icon: FontAwesomeIcons.linkedin,
-                  url: memberList[index].linkedInUrl,
+                  url: member.linkedInUrl,
                 ),
                 socialWidget(
                   icon: FontAwesomeIcons.facebook,
-                  url: memberList[index].facebookUrl,
+                  url: member.facebookUrl,
                 ),
                 socialWidget(
                   icon: FontAwesomeIcons.instagram,
-                  url: memberList[index].instagramUrl,
+                  url: member.instagramUrl,
                 ),
                 socialWidget(
                   icon: FontAwesomeIcons.github,
-                  url: memberList[index].githubUrl,
+                  url: member.githubUrl,
                 ),
               ],
             ),

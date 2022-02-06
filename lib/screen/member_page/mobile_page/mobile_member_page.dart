@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutterkolkata/constant/member_list.dart';
-import 'package:flutterkolkata/screen/member/mobile_page/mobile_member_widget.dart';
+import 'package:flutterkolkata/model/member_model.dart';
+import 'package:flutterkolkata/screen/member_page/mobile_page/mobile_member_widget.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class MobileMemberPage extends StatefulWidget {
-  const MobileMemberPage({Key? key}) : super(key: key);
+  final List<MemberModel> memeberList;
+  const MobileMemberPage({Key? key, required this.memeberList})
+      : super(key: key);
 
   @override
   State<MobileMemberPage> createState() => _MobileMemberPageState();
@@ -55,11 +57,11 @@ class _MobileMemberPageState extends State<MobileMemberPage> {
                   height: constraints.maxHeight * 0.1,
                 ),
                 // Member Names
-                for (int i = 0; i < memberList.length; i++) ...[
+                for (int i = 0; i < widget.memeberList.length; i++) ...[
                   MobileMemberWidget(
+                    member: widget.memeberList[i],
                     heightValue: constraints.maxHeight,
                     widthValue: constraints.maxWidth,
-                    index: 0,
                   )
                 ]
               ],
