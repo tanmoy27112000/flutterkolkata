@@ -113,7 +113,7 @@ class _WebHomepageState extends State<WebHomepage> {
                     ),
                   ],
                 ),
-              )
+              ),
             ],
           ),
         );

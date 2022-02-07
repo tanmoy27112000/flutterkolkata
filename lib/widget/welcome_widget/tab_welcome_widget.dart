@@ -4,10 +4,10 @@ import 'package:flutterkolkata/widget/app_bar/app_bar.dart';
 import 'package:flutterkolkata/widget/button/button_widget.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class WebWelcomeWidget extends StatelessWidget {
+class TabWelcomeWidget extends StatelessWidget {
   final BoxConstraints constraints;
   final ScrollController scrollcontroller;
-  const WebWelcomeWidget({
+  const TabWelcomeWidget({
     Key? key,
     required this.constraints,
     required this.scrollcontroller,
@@ -32,19 +32,19 @@ class WebWelcomeWidget extends StatelessWidget {
                       "Welcome to Flutter Kolkata",
                       style: GoogleFonts.poppins(
                         fontWeight: FontWeight.w700,
-                        fontSize: constraints.maxWidth * 0.02,
+                        fontSize: 40,
                         letterSpacing: 1,
                         color: Colors.grey.shade800,
                       ),
                     ),
                     SizedBox(
-                      width: 0.5 * constraints.maxWidth,
+                      width: constraints.maxWidth / 1.2,
                       child: Text(
                         "Flutter Kolkata Community is all about learning and sharing knowledge about flutter and its related technologies. If you are from a different background, you can join if you are enthusiastic about learning & sharing with fellow developers from Kolkata. We will be conducting meetups every month.",
                         textAlign: TextAlign.center,
                         style: GoogleFonts.poppins(
                           fontWeight: FontWeight.w400,
-                          fontSize: constraints.maxWidth * 0.01,
+                          fontSize: 20,
                           color: Colors.grey.shade800,
                         ),
                       ),
