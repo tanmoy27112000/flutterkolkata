@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutterkolkata/constant/image_url.dart';
 import 'package:flutterkolkata/gen/assets.gen.dart';
+import 'package:flutterkolkata/widget/drawer.dart';
+import 'package:go_router/go_router.dart';
 import 'package:sizer/sizer.dart';
 import 'package:flutterkolkata/widget/app_bar/app_bar.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -12,17 +15,48 @@ class MobileWallOfFame extends StatefulWidget {
 }
 
 class _MobileWallOfFameState extends State<MobileWallOfFame> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (BuildContext context, BoxConstraints constraints) {
         return Scaffold(
+          key: _scaffoldKey,
+          endDrawer: const CustomDrawer(),
           body: SingleChildScrollView(
             child: Padding(
               padding: const EdgeInsets.all(20),
               child: Column(
                 children: [
-                  const AppbarWidget(),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 8),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Spacer(flex: 3),
+                        GestureDetector(
+                          onTap: () => context.go("/"),
+                          child: Image.network(
+                            ImageUrl.flutterIcon,
+                            height: 25,
+                          ),
+                        ),
+                        const Spacer(flex: 2),
+                        Expanded(
+                          child: IconButton(
+                            onPressed: () {
+                              setState(() {
+                                _scaffoldKey.currentState!.openEndDrawer();
+                              });
+                            },
+                            icon: const Icon(
+                              Icons.menu,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(

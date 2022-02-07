@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterkolkata/widget/drawer.dart';
 import 'package:sizer/sizer.dart';
 import 'package:flutterkolkata/widget/app_bar/app_bar.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -17,6 +18,12 @@ class _TabWallOfFameState extends State<TabWallOfFame> {
     return LayoutBuilder(
       builder: (BuildContext context, BoxConstraints constraints) {
         return Scaffold(
+          endDrawer: const CustomDrawer(),
+          appBar: AppBar(
+            iconTheme: const IconThemeData(color: Colors.black),
+            elevation: 0,
+            backgroundColor: Colors.transparent,
+          ),
           body: SingleChildScrollView(
             child: Column(
               children: [
