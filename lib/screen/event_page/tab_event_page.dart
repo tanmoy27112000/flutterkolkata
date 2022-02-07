@@ -4,6 +4,7 @@ import 'package:flutterkolkata/widget/app_bar/app_bar.dart';
 import 'package:flutterkolkata/widget/button/button_widget.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutterkolkata/gen/assets.gen.dart';
+import 'package:flutterkolkata/widget/drawer.dart';
 
 class TabEventPage extends StatefulWidget {
   const TabEventPage({Key? key}) : super(key: key);
@@ -18,6 +19,12 @@ class _TabEventPageState extends State<TabEventPage> {
     return LayoutBuilder(
       builder: (BuildContext context, BoxConstraints constraints) {
         return Scaffold(
+          endDrawer: const CustomDrawer(),
+          appBar: AppBar(
+            iconTheme: const IconThemeData(color: Colors.black),
+            elevation: 0,
+            backgroundColor: Colors.transparent,
+          ),
           body: ListView(
             children: [
               const AppbarWidget(),
