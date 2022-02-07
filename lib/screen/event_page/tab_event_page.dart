@@ -67,7 +67,7 @@ class _TabEventPageState extends State<TabEventPage> {
                   crossAxisCount: 2,
                   mainAxisSpacing: 30,
                   crossAxisSpacing: 30,
-                  childAspectRatio: 16 / 12,
+                  childAspectRatio: 16 / 9,
                 ),
                 itemCount: 1,
                 itemBuilder: (BuildContext context, int index) {
