@@ -33,7 +33,7 @@ class _WebEventPageState extends State<WebEventPage> {
                         "Upcoming\nFlutter Kolkata\nEvents",
                         style: GoogleFonts.poppins(
                           fontWeight: FontWeight.w900,
-                          fontSize: 40,
+                          fontSize: 0.05 * constraints.maxHeight,
                           letterSpacing: 1,
                           color: Colors.grey.shade800,
                         ),
@@ -104,14 +104,14 @@ class EventWidget extends StatelessWidget {
                           "SAT, FEB 26, 2022, 6:00 PM IST",
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            fontSize: 16,
+                            fontSize: 14,
                             color: Colors.blue,
                           ),
                         ),
                         Padding(
                           padding: const EdgeInsets.only(top: 4.0),
                           child: SizedBox(
-                            width: constraints.maxWidth * 0.16,
+                            width: constraints.maxWidth * 0.15,
                             child: Text(
                               "Flutter Festival: Kolkata Chapter",
                               style: GoogleFonts.poppins(
@@ -136,17 +136,19 @@ class EventWidget extends StatelessWidget {
                         )
                       ],
                     ),
-                    Container(
-                      height: 100,
-                      width: constraints.maxWidth * 0.12,
-                      decoration: BoxDecoration(
-                        color: Colors.grey.shade200,
-                        image: const DecorationImage(
-                            image: NetworkImage(
-                              "https://secure-content.meetupstatic.com/images/classic-events/501689890/676x380.webp",
-                            ),
-                            fit: BoxFit.cover),
-                        borderRadius: BorderRadius.circular(10),
+                    Expanded(
+                      child: Container(
+                        height: 120,
+                        width: constraints.maxWidth * 0.12,
+                        decoration: BoxDecoration(
+                          color: Colors.grey.shade200,
+                          image: const DecorationImage(
+                              image: NetworkImage(
+                                "https://secure-content.meetupstatic.com/images/classic-events/501689890/676x380.webp",
+                              ),
+                              fit: BoxFit.cover),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
                       ),
                     )
                   ],
@@ -155,31 +157,37 @@ class EventWidget extends StatelessWidget {
               const Padding(
                 padding: EdgeInsets.all(8.0),
                 child: Text(
-                    "Flutter Festival : Kolkata chapter\n(watch this space for more updates soon)"),
+                  "Flutter Festival : Kolkata chapter\n(watch this space for more updates soon)",
+                  style: TextStyle(
+                    fontSize: 15,
+                  ),
+                ),
               ),
             ],
           ),
-          Align(
-            alignment: Alignment.bottomRight,
-            child: InkWell(
-              onTap: () => launchURL(
-                  "https://www.meetup.com/flutter-kolkata/events/283582627/"),
-              child: Container(
-                margin: const EdgeInsets.all(8.0),
-                height: 50,
-                width: 150,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(10),
-                  boxShadow: kElevationToShadow[3],
-                ),
-                child: Center(
-                  child: Text(
-                    "Attend event",
-                    style: GoogleFonts.poppins(
-                      fontSize: 15,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.grey.shade900,
+          Expanded(
+            child: Align(
+              alignment: Alignment.bottomRight,
+              child: InkWell(
+                onTap: () => launchURL(
+                    "https://www.meetup.com/flutter-kolkata/events/283582627/"),
+                child: Container(
+                  margin: const EdgeInsets.all(8.0),
+                  height: 50,
+                  width: 150,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: kElevationToShadow[3],
+                  ),
+                  child: Center(
+                    child: Text(
+                      "Attend event",
+                      style: GoogleFonts.poppins(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.grey.shade900,
+                      ),
                     ),
                   ),
                 ),
