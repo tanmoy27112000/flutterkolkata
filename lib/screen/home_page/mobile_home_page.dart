@@ -31,12 +31,10 @@ class _MobileHomepageState extends State<MobileHomepage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-
                     const Spacer(flex: 3),
                     Image.network(
                       ImageUrl.flutterIcon,
-                      height: 40,
-
+                      height: 0.032 * constraints.maxHeight,
                     ),
                     const Spacer(flex: 2),
                     Expanded(
@@ -72,7 +70,7 @@ class _MobileHomepageState extends State<MobileHomepage> {
                 child: Column(
                   children: [
                     Assets.images.flutterKolkata
-                        .image(height: constraints.maxHeight * 0.2),
+                        .image(height: constraints.maxHeight * 0.3),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
@@ -85,7 +83,7 @@ class _MobileHomepageState extends State<MobileHomepage> {
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 color: Colors.grey.shade700,
-                                fontSize: 20,
+                                fontSize: 0.03 * constraints.maxHeight,
                               ),
                             ),
                             const Text("Become member"),
@@ -103,7 +101,7 @@ class _MobileHomepageState extends State<MobileHomepage> {
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 color: Colors.grey.shade700,
-                                fontSize: 20,
+                                fontSize: 0.03 * constraints.maxHeight,
                               ),
                             ),
                             const Text("Facebook"),
@@ -115,11 +113,13 @@ class _MobileHomepageState extends State<MobileHomepage> {
                       ],
                     ),
                     const SizedBox(height: 10),
-                    const Padding(
-                      padding: EdgeInsets.all(16.0),
+                    Padding(
+                      padding: const EdgeInsets.all(16.0),
                       child: Text(
                         "Flutter and the related logo are trademarks of Google LLC.\n© 2022 Flutter Kolkata, All rights reserved.",
                         textAlign: TextAlign.center,
+                        style:
+                            TextStyle(fontSize: 0.015 * constraints.maxHeight),
                       ),
                     ),
                   ],

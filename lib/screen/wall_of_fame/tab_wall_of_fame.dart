@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutterkolkata/widget/app_bar/tab_app_bar.dart';
+import 'package:flutterkolkata/widget/drawer.dart';
 import 'package:sizer/sizer.dart';
-import 'package:flutterkolkata/widget/app_bar/app_bar.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutterkolkata/gen/assets.gen.dart';
 
@@ -17,12 +18,19 @@ class _TabWallOfFameState extends State<TabWallOfFame> {
     return LayoutBuilder(
       builder: (BuildContext context, BoxConstraints constraints) {
         return Scaffold(
+          endDrawer: const CustomDrawer(),
+          appBar: AppBar(
+            centerTitle: true,
+            title: const TabAppbar(),
+            iconTheme: const IconThemeData(color: Colors.black),
+            elevation: 0,
+            backgroundColor: Colors.transparent,
+          ),
           body: SingleChildScrollView(
             child: Column(
               children: [
-                const AppbarWidget(),
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(15.0),
                   child: Text(
                     "Wall of fame",
                     style: GoogleFonts.poppins(
@@ -61,7 +69,7 @@ class _TabWallOfFameState extends State<TabWallOfFame> {
                       mainAxisSpacing: 30,
                       crossAxisSpacing: 30,
                     ),
-                    itemCount: 6,
+                    itemCount: 0,
                     itemBuilder: (BuildContext context, int index) {
                       return Container(
                         decoration: BoxDecoration(

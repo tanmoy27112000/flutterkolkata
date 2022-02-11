@@ -35,7 +35,7 @@ class _MobileEventPageState extends State<MobileEventPage> {
                       onTap: () => context.go("/"),
                       child: Image.network(
                         ImageUrl.flutterIcon,
-                        height: 25,
+                        height: 0.032 * constraints.maxHeight,
                       ),
                     ),
                     const Spacer(flex: 2),

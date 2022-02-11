@@ -24,26 +24,27 @@ class MobilePoweredbyWidget extends StatelessWidget {
             "Powered By",
             style: GoogleFonts.poppins(
               fontWeight: FontWeight.w600,
-              fontSize: 30,
+              fontSize: 0.05 * constraints.maxHeight,
               letterSpacing: 1,
               color: Colors.grey.shade800,
             ),
+            textAlign: TextAlign.center,
           ),
           Expanded(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
                 SizedBox(
-                  height: 40,
+                  height: 0.04 * constraints.maxHeight,
                   child: Image.network(ImageUrl.flutterIcon),
                 ),
                 SvgPicture.asset(
                   "assets/images/google-devs.svg",
-                  height: 40,
+                  height: 0.04 * constraints.maxHeight,
                 ),
                 SvgPicture.asset(
                   "assets/images/gyt_logo.svg",
-                  height: 40,
+                  height: 0.04 * constraints.maxHeight,
                 ),
               ],
             ),

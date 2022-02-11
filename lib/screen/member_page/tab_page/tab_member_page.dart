@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutterkolkata/model/member_model.dart';
 import 'package:flutterkolkata/screen/member_page/tab_page/tab_member_widget.dart';
-import 'package:flutterkolkata/widget/app_bar/app_bar.dart';
+import 'package:flutterkolkata/widget/app_bar/tab_app_bar.dart';
+import 'package:flutterkolkata/widget/drawer.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class TabMemberPage extends StatefulWidget {
@@ -17,13 +18,19 @@ class _TabMemberPageState extends State<TabMemberPage> {
     return LayoutBuilder(
       builder: (BuildContext context, BoxConstraints constraints) {
         return Scaffold(
+          endDrawer: const CustomDrawer(),
+          appBar: AppBar(
+            centerTitle: true,
+            title: const TabAppbar(),
+            iconTheme: const IconThemeData(color: Colors.black),
+            elevation: 0,
+            backgroundColor: Colors.transparent,
+          ),
           body: SingleChildScrollView(
             child: Column(
               children: [
-                const AppbarWidget(),
-                SizedBox(height: 0.03 * constraints.maxHeight),
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(15.0),
                   child: Text(
                     "Our community members",
                     style: GoogleFonts.poppins(

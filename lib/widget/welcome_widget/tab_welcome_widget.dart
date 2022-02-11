@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutterkolkata/gen/assets.gen.dart';
-import 'package:flutterkolkata/widget/app_bar/app_bar.dart';
+// import 'package:flutterkolkata/widget/app_bar/app_bar.dart';
 import 'package:flutterkolkata/widget/button/button_widget.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -23,7 +23,7 @@ class TabWelcomeWidget extends StatelessWidget {
           height: constraints.maxHeight,
           child: Column(
             children: <Widget>[
-              const AppbarWidget(),
+              // const AppbarWidget(),
               Expanded(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
