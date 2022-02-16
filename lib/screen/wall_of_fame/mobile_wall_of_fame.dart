@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutterkolkata/constant/image_url.dart';
-import 'package:flutterkolkata/constant/image_url.dart';
+import 'package:flutterkolkata/gen/assets.gen.dart';
 import 'package:flutterkolkata/widget/drawer.dart';
 import 'package:go_router/go_router.dart';
-import 'package:flutterkolkata/widget/drawer.dart';
-import 'package:go_router/go_router.dart';
+
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 

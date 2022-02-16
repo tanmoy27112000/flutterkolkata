@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutterkolkata/widget/app_bar/tab_app_bar.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:flutterkolkata/widget/app_bar/app_bar.dart';
 import 'package:flutterkolkata/widget/button/button_widget.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutterkolkata/gen/assets.gen.dart';

@@ -2,10 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutterkolkata/widget/app_bar/tab_app_bar.dart';
 import 'package:flutterkolkata/widget/drawer.dart';
 import 'package:sizer/sizer.dart';
-import 'package:flutterkolkata/widget/app_bar/app_bar.dart';
-import 'package:flutterkolkata/widget/drawer.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:sizer/sizer.dart';
+
 
 class TabWallOfFame extends StatefulWidget {
   const TabWallOfFame({Key? key}) : super(key: key);
