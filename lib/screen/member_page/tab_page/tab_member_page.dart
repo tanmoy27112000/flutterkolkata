@@ -46,7 +46,7 @@ class _TabMemberPageState extends State<TabMemberPage> {
                   child: SizedBox(
                     width: 0.7 * constraints.maxWidth,
                     child: Text(
-                      "Wall of fame contains all the projects created by our community members. You can also see the projects created by other members of the community.",
+                      "We’re the Flutter Kolkata team, Meet the members.",
                       textAlign: TextAlign.center,
                       style: GoogleFonts.poppins(
                         fontWeight: FontWeight.w400,

@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutterkolkata/constant/image_url.dart';
-import 'package:flutterkolkata/gen/assets.gen.dart';
+import 'package:flutterkolkata/constant/image_url.dart';
 import 'package:flutterkolkata/widget/drawer.dart';
 import 'package:go_router/go_router.dart';
-import 'package:sizer/sizer.dart';
-import 'package:flutterkolkata/widget/app_bar/app_bar.dart';
+import 'package:flutterkolkata/widget/drawer.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sizer/sizer.dart';
 
 class MobileWallOfFame extends StatefulWidget {
   const MobileWallOfFame({Key? key}) : super(key: key);

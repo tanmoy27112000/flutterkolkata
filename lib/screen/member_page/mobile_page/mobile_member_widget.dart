@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutterkolkata/constant/member_list.dart';
 import 'package:flutterkolkata/model/member_model.dart';
 import 'package:flutterkolkata/widget/atoms/social_widget.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
