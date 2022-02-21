@@ -23,13 +23,17 @@ class MobileWelcomeWidget extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
-                Text(
-                  "Welcome to Flutter Kolkata",
-                  style: GoogleFonts.poppins(
-                    fontWeight: FontWeight.w700,
-                    fontSize: 24,
-                    letterSpacing: 1,
-                    color: Colors.grey.shade800,
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: Text(
+                    "Welcome to Flutter Kolkata",
+                    style: GoogleFonts.poppins(
+                      fontWeight: FontWeight.w700,
+                      fontSize: 0.028 * constraints.maxHeight,
+                      letterSpacing: 1,
+                      color: Colors.grey.shade800,
+                    ),
+                    textAlign: TextAlign.center,
                   ),
                 ),
                 SizedBox(
@@ -39,7 +43,7 @@ class MobileWelcomeWidget extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: GoogleFonts.poppins(
                       fontWeight: FontWeight.w400,
-                      fontSize: 18,
+                      fontSize: 0.018 * constraints.maxHeight,
                       color: Colors.grey.shade800,
                     ),
                   ),

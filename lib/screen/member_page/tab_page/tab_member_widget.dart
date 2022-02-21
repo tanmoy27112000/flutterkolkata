@@ -49,7 +49,7 @@ class TabMemberWidget extends StatelessWidget {
           height: heightValue * 0.01,
         ),
         Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             tabSocialWidget(
                 icon: FontAwesomeIcons.linkedin,

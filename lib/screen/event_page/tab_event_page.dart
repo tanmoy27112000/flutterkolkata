@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutterkolkata/widget/app_bar/tab_app_bar.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:flutterkolkata/widget/app_bar/app_bar.dart';
 import 'package:flutterkolkata/widget/button/button_widget.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutterkolkata/gen/assets.gen.dart';
@@ -21,13 +21,14 @@ class _TabEventPageState extends State<TabEventPage> {
         return Scaffold(
           endDrawer: const CustomDrawer(),
           appBar: AppBar(
+            centerTitle: true,
+            title: const TabAppbar(),
             iconTheme: const IconThemeData(color: Colors.black),
             elevation: 0,
             backgroundColor: Colors.transparent,
           ),
           body: ListView(
             children: [
-              const AppbarWidget(),
               SizedBox(
                 height: 0.3 * constraints.maxHeight,
                 width: constraints.maxWidth,

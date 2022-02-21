@@ -59,7 +59,7 @@ class _WebHallOfFameState extends State<WebWallOfFame> {
                 //       mainAxisSpacing: 30,
                 //       crossAxisSpacing: 30,
                 //     ),
-                //     itemCount: 8,
+                //     itemCount: 0,
                 //     itemBuilder: (BuildContext context, int index) {
                 //       return Container(
                 //         decoration: BoxDecoration(

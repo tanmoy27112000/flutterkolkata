@@ -8,7 +8,7 @@ Widget tabSocialWidget({
 }) {
   return url != null
       ? IconButton(
-          padding: EdgeInsets.zero,
+          padding: EdgeInsets.symmetric(horizontal: 5),
           constraints: const BoxConstraints(),
           onPressed: () {
             launchURL(
