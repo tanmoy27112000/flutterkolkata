@@ -1,0 +1,174 @@
+import 'package:flutter/material.dart';
+import 'package:flutterkolkata/constant/image_url.dart';
+import 'package:flutterkolkata/gen/assets.gen.dart';
+import 'package:flutterkolkata/widget/drawer.dart';
+import 'package:go_router/go_router.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+
+class MobileWallOfFame extends StatefulWidget {
+  const MobileWallOfFame({Key? key}) : super(key: key);
+
+  @override
+  State<MobileWallOfFame> createState() => _MobileWallOfFameState();
+}
+
+class _MobileWallOfFameState extends State<MobileWallOfFame> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+  @override
+  Widget build(BuildContext context) {
+    return LayoutBuilder(
+      builder: (BuildContext context, BoxConstraints constraints) {
+        return Scaffold(
+          key: _scaffoldKey,
+          endDrawer: const CustomDrawer(),
+          body: SingleChildScrollView(
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(top: 8),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Spacer(flex: 3),
+                      GestureDetector(
+                        onTap: () => context.go("/"),
+                        child: Image.network(
+                          ImageUrl.flutterIcon,
+                          height: 0.032 * constraints.maxHeight,
+                        ),
+                      ),
+                      const Spacer(flex: 2),
+                      Expanded(
+                        child: IconButton(
+                          onPressed: () {
+                            setState(() {
+                              _scaffoldKey.currentState!.openEndDrawer();
+                            });
+                          },
+                          icon: const Icon(
+                            Icons.menu,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: constraints.maxHeight * 0.04,
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    "Wall of fame",
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.poppins(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 0.028 * constraints.maxHeight,
+                      letterSpacing: 1,
+                      color: Colors.grey.shade800,
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Text(
+                    "Wall of fame contains all the projects created by our community members. You can also see the projects created by other members of the community.",
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.poppins(
+                      fontWeight: FontWeight.w400,
+                      fontSize: 0.018 * constraints.maxHeight,
+                      color: Colors.grey.shade800,
+                    ),
+                  ),
+                ),
+                // Padding(
+                //   padding: const EdgeInsets.all(20),
+                //   child: GridView.builder(
+                //     physics: ScrollPhysics(),
+                //     shrinkWrap: true,
+                //     padding: const EdgeInsets.all(20),
+                //     gridDelegate:
+                //         const SliverGridDelegateWithFixedCrossAxisCount(
+                //       childAspectRatio: 2 / 2,
+                //       crossAxisCount: 1,
+                //       mainAxisSpacing: 30,
+                //     ),
+                //     itemCount: 0,
+                //     itemBuilder: (BuildContext context, int index) {
+                //       return Container(
+                //         decoration: BoxDecoration(
+                //           borderRadius: BorderRadius.circular(10),
+                //           color: Colors.white,
+                //           boxShadow: kElevationToShadow[3],
+                //         ),
+                //         child: Column(
+                //           children: <Widget>[
+                //             Expanded(
+                //               flex: 2,
+                //               child: ClipRRect(
+                //                 borderRadius: const BorderRadius.only(
+                //                   topLeft: Radius.circular(10),
+                //                   topRight: Radius.circular(10),
+                //                 ),
+                //                 child: Container(
+                //                   decoration: BoxDecoration(
+                //                     image: DecorationImage(
+                //                         image: Assets.images.events),
+                //                   ),
+                //                 ),
+                //               ),
+                //             ),
+                //             Expanded(
+                //               flex: 1,
+                //               child: Column(
+                //                 crossAxisAlignment: CrossAxisAlignment.start,
+                //                 children: [
+                //                   Padding(
+                //                     padding: const EdgeInsets.symmetric(
+                //                         horizontal: 8, vertical: 4),
+                //                     child: Text(
+                //                       "Project Name",
+                //                       style: GoogleFonts.poppins(
+                //                         fontWeight: FontWeight.w500,
+                //                         fontSize: 8.sp,
+                //                         color: Colors.grey.shade800,
+                //                         backgroundColor: Colors.white60,
+                //                       ),
+                //                     ),
+                //                   ),
+                //                   Flexible(
+                //                     child: Padding(
+                //                       padding: const EdgeInsets.symmetric(
+                //                           horizontal: 8, vertical: 4),
+                //                       child: Text(
+                //                         "There are usually about 200 words in a paragraph, but this can vary widely. Most paragraphs focus on a single idea that's expressed with an introductory sentence, then followed by two or more supporting sentences about the idea.",
+                //                         style: GoogleFonts.poppins(
+                //                           fontSize: 6.sp,
+                //                           color: Colors.grey.shade800,
+                //                           height: 1.4,
+                //                           wordSpacing: 4,
+                //                         ),
+                //                         maxLines: 4,
+                //                         softWrap: true,
+                //                         overflow: TextOverflow.ellipsis,
+                //                       ),
+                //                     ),
+                //                   )
+                //                 ],
+                //               ),
+                //             )
+                //           ],
+                //         ),
+                //       );
+                //     },
+                //   ),
+                // ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
+}
