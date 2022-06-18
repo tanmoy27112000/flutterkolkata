@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutterkolkata/constant/image_url.dart';
-import 'package:flutterkolkata/gen/assets.gen.dart';
 import 'package:flutterkolkata/widget/drawer.dart';
-import 'package:go_router/go_router.dart';
-import 'package:google_fonts/google_fonts.dart';
 
+import 'package:google_fonts/google_fonts.dart';
 
 class MobileWallOfFame extends StatefulWidget {
   const MobileWallOfFame({Key? key}) : super(key: key);
@@ -32,7 +31,7 @@ class _MobileWallOfFameState extends State<MobileWallOfFame> {
                     children: [
                       const Spacer(flex: 3),
                       GestureDetector(
-                        onTap: () => context.go("/"),
+                        onTap: () => Modular.to.pushNamed("/"),
                         child: Image.network(
                           ImageUrl.flutterIcon,
                           height: 0.032 * constraints.maxHeight,

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutterkolkata/constant/image_url.dart';
 import 'package:flutterkolkata/constant/text_style.dart';
 import 'package:flutterkolkata/widget/button/button_widget.dart';
-import 'package:go_router/go_router.dart';
 
 class WebAppbar extends StatelessWidget {
   const WebAppbar({
@@ -23,7 +23,7 @@ class WebAppbar extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: GestureDetector(
-                    onTap: () => context.go("/"),
+                    onTap: () => Modular.to.pushNamed("/"),
                     child: SizedBox(
                       height: 30,
                       child: Image.network(ImageUrl.flutterIcon),
@@ -36,21 +36,21 @@ class WebAppbar extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       GestureDetector(
-                        onTap: () => context.go("/wall_of_fame"),
+                        onTap: () => Modular.to.pushNamed("/wall_of_fame"),
                         child: Text(
                           "Wall of fame",
                           style: KTextstyle.grey600bold,
                         ),
                       ),
                       GestureDetector(
-                        onTap: () => context.go("/events"),
+                        onTap: () => Modular.to.pushNamed("/events"),
                         child: Text(
                           "Upcoming Events",
                           style: KTextstyle.grey600bold,
                         ),
                       ),
                       GestureDetector(
-                        onTap: () => context.go("/members"),
+                        onTap: () => Modular.to.pushNamed("/members"),
                         child: Text(
                           "Members",
                           style: KTextstyle.grey600bold,

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutterkolkata/constant/image_url.dart';
 import 'package:flutterkolkata/model/member_model.dart';
 import 'package:flutterkolkata/screen/member_page/mobile_page/mobile_member_widget.dart';
-import 'package:go_router/go_router.dart';
+
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutterkolkata/widget/drawer.dart';
 
@@ -35,7 +36,7 @@ class _MobileMemberPageState extends State<MobileMemberPage> {
                     children: [
                       const Spacer(flex: 3),
                       GestureDetector(
-                        onTap: () => context.go("/"),
+                        onTap: () => Modular.to.pushNamed("/"),
                         child: Image.network(
                           ImageUrl.flutterIcon,
                           height: 0.032 * constraints.maxHeight,

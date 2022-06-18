@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutterkolkata/constant/image_url.dart';
-import 'package:go_router/go_router.dart';
 
 class TabAppbar extends StatelessWidget {
   const TabAppbar({
@@ -12,7 +12,7 @@ class TabAppbar extends StatelessWidget {
     return LayoutBuilder(
       builder: (BuildContext context, BoxConstraints constraints) {
         return GestureDetector(
-          onTap: () => context.go("/"),
+          onTap: () => Modular.to.pushNamed("/"),
           child: SizedBox(
             height: 30,
             child: Image.network(ImageUrl.flutterIcon),

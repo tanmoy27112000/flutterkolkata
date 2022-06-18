@@ -34,11 +34,12 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: ^8.0.1
+  flutter_modular: ^5.0.3
   flutter_svg: ^1.0.3
   font_awesome_flutter: ^9.2.0
   freezed_annotation:
 
-  go_router: ^3.0.1
+
   google_fonts: 2.2.0
   json_annotation:
   lottie: ^1.2.1
