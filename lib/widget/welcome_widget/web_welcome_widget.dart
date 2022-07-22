@@ -3,6 +3,7 @@ import 'package:flutterkolkata/gen/assets.gen.dart';
 import 'package:flutterkolkata/widget/app_bar/app_bar.dart';
 import 'package:flutterkolkata/widget/button/button_widget.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sizer/sizer.dart';
 
 class WebWelcomeWidget extends StatelessWidget {
   final BoxConstraints constraints;
@@ -26,26 +27,51 @@ class WebWelcomeWidget extends StatelessWidget {
               const AppbarWidget(),
               Expanded(
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
+                    Assets.images.fluttercon.image(width: 30.w),
                     Text(
-                      "Welcome to Flutter Kolkata",
+                      "Flutter Conference 2022",
                       style: GoogleFonts.poppins(
                         fontWeight: FontWeight.w700,
+                        fontSize: constraints.maxWidth * 0.03,
+                        letterSpacing: 1,
+                        color: Colors.grey.shade800,
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Text(
+                        "31 AUG - 1 SEP, 2022",
+                        style: GoogleFonts.poppins(
+                          fontWeight: FontWeight.w700,
+                          fontSize: constraints.maxWidth * 0.02,
+                          letterSpacing: 1,
+                          color: Colors.grey.shade800,
+                        ),
+                      ),
+                    ),
+                    Text(
+                      "Bangalore, India",
+                      style: GoogleFonts.poppins(
+                        fontWeight: FontWeight.w500,
                         fontSize: constraints.maxWidth * 0.02,
                         letterSpacing: 1,
                         color: Colors.grey.shade800,
                       ),
                     ),
-                    SizedBox(
-                      width: 0.5 * constraints.maxWidth,
-                      child: Text(
-                        "Flutter Kolkata Community is all about learning and sharing knowledge about flutter and its related technologies. If you are from a different background, you can join if you are enthusiastic about learning & sharing with fellow developers from Kolkata. We will be conducting meetups every month.",
-                        textAlign: TextAlign.center,
-                        style: GoogleFonts.poppins(
-                          fontWeight: FontWeight.w400,
-                          fontSize: constraints.maxWidth * 0.01,
-                          color: Colors.grey.shade800,
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: SizedBox(
+                        width: 0.5 * constraints.maxWidth,
+                        child: Text(
+                          "Flutter Kolkata Community is all about learning and sharing knowledge about flutter and its related technologies. If you are from a different background, you can join if you are enthusiastic about learning & sharing with fellow developers from Kolkata. We will be conducting meetups every month.",
+                          textAlign: TextAlign.center,
+                          style: GoogleFonts.poppins(
+                            fontWeight: FontWeight.w400,
+                            fontSize: constraints.maxWidth * 0.01,
+                            color: Colors.grey.shade800,
+                          ),
                         ),
                       ),
                     ),
@@ -72,10 +98,6 @@ class WebWelcomeWidget extends StatelessWidget {
                           ),
                         ],
                       ),
-                    ),
-                    Image.asset(
-                      Assets.images.kolkata.path,
-                      height: 0.6 * constraints.maxHeight,
                     ),
                   ],
                 ),

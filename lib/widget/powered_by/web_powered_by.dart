@@ -16,7 +16,6 @@ class PoweredbyWidget extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 16),
       height: constraints.maxHeight * 0.6,
       width: constraints.maxWidth,
-      color: Colors.grey.shade100,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[

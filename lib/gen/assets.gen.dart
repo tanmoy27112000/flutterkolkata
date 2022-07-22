@@ -20,6 +20,10 @@ class $AssetsImagesGen {
   AssetGenImage get flutterKolkata =>
       const AssetGenImage('assets/images/flutter_kolkata.png');
 
+  /// File path: assets/images/fluttercon.png
+  AssetGenImage get fluttercon =>
+      const AssetGenImage('assets/images/fluttercon.png');
+
   /// File path: assets/images/google-devs.svg
   String get googleDevs => 'assets/images/google-devs.svg';
 
