@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutterkolkata/constant/text_style.dart';
 import 'package:flutterkolkata/gen/assets.gen.dart';
 import 'package:flutterkolkata/widget/button/button_widget.dart';
-import 'package:go_router/go_router.dart';
+import 'package:qlevar_router/qlevar_router.dart';
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({Key? key}) : super(key: key);
@@ -31,21 +31,21 @@ class CustomDrawer extends StatelessWidget {
               padding: const EdgeInsets.symmetric(vertical: 20),
               children: [
                 ListTile(
-                  onTap: () => context.go("/wall_of_fame"),
+                  onTap: () => QR.to("/walloffame"),
                   title: Text(
                     'Wall Of Fame',
                     style: KTextstyle.grey600bold,
                   ),
                 ),
                 ListTile(
-                  onTap: () => context.go("/events"),
+                  onTap: () => QR.to("/events"),
                   title: Text(
                     'Upcoming Events',
                     style: KTextstyle.grey600bold,
                   ),
                 ),
                 ListTile(
-                  onTap: () => context.go("/members"),
+                  onTap: () => QR.to("/members"),
                   title: Text(
                     'Members',
                     style: KTextstyle.grey600bold,

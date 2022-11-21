@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterkolkata/model/member_model.dart';
 import 'package:flutterkolkata/widget/app_bar/app_bar.dart';
@@ -68,9 +69,36 @@ class _WebHallOfFameState extends State<WebMemberPage> {
                         Padding(
                           padding: const EdgeInsets.all(16.0),
                           child: CircleAvatar(
-                            backgroundColor: Colors.grey,
+                            backgroundColor: Colors.grey.shade100,
                             backgroundImage: NetworkImage(member.imageUrl),
                             radius: constraints.maxWidth * 0.05,
+                            child: CachedNetworkImage(
+                              imageUrl: member.imageUrl,
+                              imageBuilder: (context, imageProvider) =>
+                                  Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(100),
+                                  image: DecorationImage(
+                                    image: imageProvider,
+                                    fit: BoxFit.fitWidth,
+                                  ),
+                                ),
+                              ),
+                              placeholder: (context, url) => Center(
+                                child: CircularProgressIndicator.adaptive(),
+                              ),
+                              errorWidget: (context, url, error) => Center(
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                      image: NetworkImage(
+                                          "https://cdn-icons-png.flaticon.com/512/149/149071.png"),
+                                      fit: BoxFit.fitWidth,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
                           ),
                         ),
                         Text(
@@ -83,6 +111,7 @@ class _WebHallOfFameState extends State<WebMemberPage> {
                         ),
                         Text(
                           member.title,
+                          textAlign: TextAlign.center,
                           style: TextStyle(
                             color: Colors.grey.shade600,
                             fontWeight: FontWeight.w800,
@@ -92,7 +121,11 @@ class _WebHallOfFameState extends State<WebMemberPage> {
                         const SizedBox(
                           height: 2,
                         ),
-                        Text(member.description),
+                        Text(
+                          member.description,
+                          maxLines: 2,
+                          textAlign: TextAlign.center,
+                        ),
                         Padding(
                           padding: const EdgeInsets.symmetric(
                             vertical: 5.0,

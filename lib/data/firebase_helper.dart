@@ -19,7 +19,7 @@ class FirestoreService {
               name: member['name'],
               imageUrl: member['imageUrl'],
               title: member['title'],
-              description: member['description'],
+              description: member['description'].toString(),
               facebookUrl: member['facebook'],
               instagramUrl: member['instagramUrl'],
               linkedInUrl: member['linkedin'],

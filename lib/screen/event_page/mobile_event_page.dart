@@ -4,8 +4,8 @@ import 'package:flutterkolkata/gen/assets.gen.dart';
 import 'package:flutterkolkata/widget/button/button_widget.dart';
 import 'package:flutterkolkata/widget/drawer.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:qlevar_router/qlevar_router.dart';
 
 class MobileEventPage extends StatefulWidget {
   const MobileEventPage({Key? key}) : super(key: key);
@@ -32,7 +32,7 @@ class _MobileEventPageState extends State<MobileEventPage> {
                   children: [
                     const Spacer(flex: 3),
                     GestureDetector(
-                      onTap: () => context.go("/"),
+                      onTap: () => QR.to("/"),
                       child: Image.network(
                         ImageUrl.flutterIcon,
                         height: 0.032 * constraints.maxHeight,
