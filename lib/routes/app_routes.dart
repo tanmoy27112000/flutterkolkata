@@ -1,6 +1,7 @@
 import 'package:flutterkolkata/screen/event_page/event_page.dart';
 import 'package:flutterkolkata/screen/home_page/home_page.dart';
 import 'package:flutterkolkata/screen/member_page/member_page.dart';
+import 'package:flutterkolkata/screen/sponsor/sponsor.dart';
 import 'package:flutterkolkata/screen/wall_of_fame/wall_of_fame.dart';
 import 'package:qlevar_router/qlevar_router.dart';
 
@@ -31,6 +32,11 @@ class AppRoutes {
       name: member,
       path: '/members',
       builder: () => MemberPage(),
+    ),
+    QRoute(
+      name: member,
+      path: '/sponsor',
+      builder: () => sponsor_page(),
     ),
   ];
 }
