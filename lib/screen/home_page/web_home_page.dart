@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutterkolkata/gen/assets.gen.dart';
+import 'package:flutterkolkata/widget/community_partners/web_community_partners.dart';
 import 'package:flutterkolkata/widget/powered_by/web_powered_by.dart';
 import 'package:flutterkolkata/widget/welcome_widget/web_welcome_widget.dart';
 
@@ -30,6 +31,9 @@ class _WebHomepageState extends State<WebHomepage> {
                 scrollcontroller: _scrollController,
               ),
               PoweredbyWidget(
+                constraints: constraints,
+              ),
+              CommunityPartnerWidget(
                 constraints: constraints,
               ),
               Container(

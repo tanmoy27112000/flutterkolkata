@@ -53,10 +53,11 @@ class _WebEventPageState extends State<WebEventPage> {
                   crossAxisSpacing: 30,
                   childAspectRatio: 16 / 9,
                 ),
-                itemCount: 1,
+                itemCount: meetupEvents.length,
                 itemBuilder: (BuildContext context, int index) {
                   return EventWidget(
                     constraints: constraints,
+                    index: index,
                   );
                 },
               ),
@@ -70,9 +71,11 @@ class _WebEventPageState extends State<WebEventPage> {
 
 class EventWidget extends StatelessWidget {
   final BoxConstraints constraints;
+  final int index;
   const EventWidget({
     Key? key,
     required this.constraints,
+    required this.index,
   }) : super(key: key);
 
   @override
@@ -100,8 +103,8 @@ class EventWidget extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        const Text(
-                          "SAT, FEB 26, 2022, 6:00 PM IST",
+                        Text(
+                          meetupEvents[index]["date"],
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 14,
@@ -113,7 +116,7 @@ class EventWidget extends StatelessWidget {
                           child: SizedBox(
                             width: constraints.maxWidth * 0.15,
                             child: Text(
-                              "Flutter Festival: Kolkata Chapter",
+                              meetupEvents[index]["title"],
                               style: GoogleFonts.poppins(
                                 fontWeight: FontWeight.w800,
                                 fontSize: 16,
@@ -123,14 +126,14 @@ class EventWidget extends StatelessWidget {
                           ),
                         ),
                         Row(
-                          children: const <Widget>[
+                          children: <Widget>[
                             Icon(
                               FontAwesomeIcons.youtube,
                               color: Colors.grey,
                             ),
                             Padding(
                               padding: EdgeInsets.all(8.0),
-                              child: Text("Online event"),
+                              child: Text(meetupEvents[index]["eventType"]),
                             ),
                           ],
                         )
@@ -142,9 +145,9 @@ class EventWidget extends StatelessWidget {
                         width: constraints.maxWidth * 0.12,
                         decoration: BoxDecoration(
                           color: Colors.grey.shade200,
-                          image: const DecorationImage(
+                          image: DecorationImage(
                               image: NetworkImage(
-                                "https://secure-content.meetupstatic.com/images/classic-events/501689890/676x380.webp",
+                                meetupEvents[index]["image"],
                               ),
                               fit: BoxFit.cover),
                           borderRadius: BorderRadius.circular(10),
@@ -154,10 +157,10 @@ class EventWidget extends StatelessWidget {
                   ],
                 ),
               ),
-              const Padding(
+              Padding(
                 padding: EdgeInsets.all(8.0),
                 child: Text(
-                  "Flutter Festival : Kolkata chapter\n(watch this space for more updates soon)",
+                  meetupEvents[index]["description"],
                   style: TextStyle(
                     fontSize: 15,
                   ),
@@ -169,8 +172,7 @@ class EventWidget extends StatelessWidget {
             child: Align(
               alignment: Alignment.bottomRight,
               child: InkWell(
-                onTap: () => launchURL(
-                    "https://www.meetup.com/flutter-kolkata/events/283582627/"),
+                onTap: () => launchURL(meetupEvents[index]["link"]),
                 child: Container(
                   margin: const EdgeInsets.all(8.0),
                   height: 50,
@@ -199,3 +201,24 @@ class EventWidget extends StatelessWidget {
     );
   }
 }
+
+List meetupEvents = [
+  {
+    "title": "Flutter Forward Extended Kolkata",
+    "date": "SAT, March 25, 2023, TBD",
+    "eventType": "In-Person event",
+    "image": "https://i.imgur.com/QGnnneg.png",
+    "description":
+        "Flutter Forward Extended Kolkata\n(watch this space for more updates soon)",
+    "link": "https://www.meetup.com/flutter-kolkata/events/",
+  },
+  {
+    "title": "Flutter Kolkata Meetup",
+    "date": "SAT, FEB 26, 2022, 6:00 PM IST",
+    "eventType": "Online event",
+    "image":
+        "https://secure-content.meetupstatic.com/images/classic-events/501689890/676x380.webp",
+    "description": "Flutter Festival : Kolkata chapter",
+    "link": "https://www.meetup.com/flutter-kolkata/events/283582627/",
+  },
+];
