@@ -18,6 +18,7 @@
     "@mui/material": "latest",
     "@next/font": "latest",
     "next": "latest",
+    "polished": "^4.2.2",
     "prop-types": "latest",
     "react": "latest",
     "react-dom": "latest"
