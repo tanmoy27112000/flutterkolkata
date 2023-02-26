@@ -5,35 +5,54 @@ import { Button, Button as MUIButton } from "@mui/material";
 import { lighten } from "polished";
 
 const ButtonStyles = styled(MUIButton)(({ theme }) => ({
-  borderRadius: "30px",
   color: `${theme.palette.primary.text}`,
   backgroundColor: "#fff",
   border: `2px solid ${theme.palette.primary.main}`,
-
-  position: "relative",
-  width: "230px",
-  height: "40px",
-
-  "& img": {
-    left: "-50% !important",
-    top: "50% !important",
-    transform: "translateY(-50%)",
-    height: "130% !important",
-  },
 
   "&:hover": {
     backgroundColor: `${theme.palette.primary.main}`,
     color: "#fff",
   },
+
+  fontSize: "0.8rem",
+  borderRadius: "30px",
+  maxWidth: "300px",
+  width: "100%",
+
+  // paddingLeft: "20px",
+  [theme.breakpoints.up("sm")]: {
+    width: "min-content",
+    whiteSpace: "nowrap",
+
+    position: "relative",
+    paddingLeft: "40px",
+    paddingRight: "10px",
+    zIndex: "1",
+  },
 }));
 
-const IconContainer = styled("div")(({ theme }) => ({}));
+const IconImage = styled("img")(({ theme }) => ({
+  width: "40px",
+  height: "40px",
+  marginRight: "10px",
+  // zIndex: "-1",
+
+  [theme.breakpoints.up("sm")]: {
+    // position: "absolute",
+    width: "60px",
+    height: "60px",
+    left: "-20px",
+    position: "absolute",
+    left: "-20px",
+    top: "50%",
+    transform: "translateY(-50%)",
+  },
+}));
 
 const IconButton = ({ icon, children, ...otherProps }) => {
   return (
     <ButtonStyles {...otherProps}>
-      <Image src={icon} fill />
-
+      <IconImage src={icon} alt="icon" />
       {children}
     </ButtonStyles>
   );

@@ -10,7 +10,23 @@ import Links from "../../constants/Links";
 
 const HeroContainer = styled(Grid)(({}) => ({
   paddingTop: "100px",
+  // position: "relative",
+}));
+
+const KolkataImgContainer = styled("div")(({ theme }) => ({
   position: "relative",
+  height: "600px",
+  marginTop: "-100px",
+  zIndex: -2,
+
+  [theme.breakpoints.down("lg")]: {
+    marginTop: "20px",
+    height: "300px",
+  },
+
+  [theme.breakpoints.down("md")]: {
+    height: "200px",
+  },
 }));
 
 const HeroFlex = styled("div")(({}) => ({
@@ -19,15 +35,18 @@ const HeroFlex = styled("div")(({}) => ({
   gap: "2rem",
 }));
 
-const PhoneImageContainer = styled("div")(({}) => ({
+const PhoneImageContainer = styled("div")(({ theme }) => ({
   position: "relative",
   height: "400px",
   width: "100%",
+
+  [theme.breakpoints.down("lg")]: {
+    display: "none",
+  },
 }));
 
 const KolkataImg = styled(Image)(({}) => ({
-  top: "80% !important",
-  zIndex: -1,
+  // top: "80% !important",
 }));
 
 const SmallText = styled("h3")(({ theme }) => ({
@@ -53,6 +72,7 @@ const ButtonGroup = styled("div")(({}) => ({
   alignItems: "center",
   gap: "20px",
   marginTop: "20px",
+  flexWrap: "wrap",
 }));
 
 const Hero = () => {
@@ -76,14 +96,14 @@ const Hero = () => {
 
             <ButtonGroup>
               <IconButton
-                icon={MeetupIcon}
+                icon="/assets/meetup.svg"
                 variant="text"
                 href={Links.MEETUP_LINK}
               >
                 Join the Meetup group
               </IconButton>
               <IconButton
-                icon={WhatsAppIcon}
+                icon="/assets/whatsapp.svg"
                 variant="text"
                 href={Links.WHATSAPP_LINK}
               >
@@ -102,7 +122,9 @@ const Hero = () => {
         </HeroFlex>
       </Container>
 
-      <KolkataImg src="/assets/kolkata-bg.png" alt="kolkata" fill />
+      <KolkataImgContainer>
+        <KolkataImg src="/assets/kolkata-bg.png" alt="kolkata" fill />
+      </KolkataImgContainer>
     </HeroContainer>
   );
 };

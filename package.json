@@ -21,7 +21,8 @@
     "polished": "^4.2.2",
     "prop-types": "latest",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "swiper": "^9.0.5"
   },
   "devDependencies": {
     "eslint": "latest",
