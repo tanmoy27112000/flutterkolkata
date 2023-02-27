@@ -120,7 +120,6 @@ const Hero = () => {
             />
           </PhoneImageContainer>
         </HeroFlex>
-        <></>
         <KolkataImgContainer>
           <KolkataImg src="/assets/kolkata-bg.png" alt="kolkata" fill />
         </KolkataImgContainer>
