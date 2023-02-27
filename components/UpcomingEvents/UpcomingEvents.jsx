@@ -95,14 +95,16 @@ const UpcomingEvents = () => {
       }}
       maxWidth="xlg"
     >
-      <Container
-        sx={{
-          marginBottom: "40px",
-        }}
-      >
-        <Typography variant="poster">Upcoming Events</Typography>
-      </Container>
-      {/* <Swiper
+      <Container>
+        <Box
+          sx={{
+            marginBottom: "40px",
+          }}
+        >
+          <Typography variant="poster">Upcoming Events</Typography>
+        </Box>
+
+        {/* <Swiper
         slidesPerView={2}
         spaceBetween={30}
         grabCursor={true}
@@ -129,15 +131,16 @@ const UpcomingEvents = () => {
         
       </Swiper> */}
 
-      <ImageContainer>
-        <Swiper slidesPerView={"auto"} spaceBetween={30} className="mySwiper">
-          {data.map((item, index) => (
-            <SwiperSlide key={index}>
-              <UpcomingEventsCard data={item} />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </ImageContainer>
+        <ImageContainer>
+          <Swiper slidesPerView={"auto"} spaceBetween={30} className="mySwiper">
+            {data.map((item, index) => (
+              <SwiperSlide key={index}>
+                <UpcomingEventsCard data={item} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </ImageContainer>
+      </Container>
     </Box>
   );
 };

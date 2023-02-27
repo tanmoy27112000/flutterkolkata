@@ -120,11 +120,11 @@ const Hero = () => {
             />
           </PhoneImageContainer>
         </HeroFlex>
-      </Container>
 
-      <KolkataImgContainer>
-        <KolkataImg src="/assets/kolkata-bg.png" alt="kolkata" fill />
-      </KolkataImgContainer>
+        <KolkataImgContainer>
+          <KolkataImg src="/assets/kolkata-bg.png" alt="kolkata" fill />
+        </KolkataImgContainer>
+      </Container>
     </HeroContainer>
   );
 };
