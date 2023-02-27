@@ -30,11 +30,7 @@ const UpcomingEventsCard = ({ data }) => {
   const { image, name, date, description, link } = data;
 
   return (
-    <ShowCaseCard
-      style={{
-        width: "290px",
-      }}
-    >
+    <ShowCaseCard>
       <ShowcaseImageContainer>
         <Image src={image} alt={name} fill />
       </ShowcaseImageContainer>

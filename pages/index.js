@@ -13,6 +13,7 @@ export default function Index() {
       <Navbar />
       <Hero />
       <UpcomingEvents />
+
       <Showcase type="poweredBy" />
       <Showcase type="communityPartners" />
       <Footer />

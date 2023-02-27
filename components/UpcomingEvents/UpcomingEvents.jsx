@@ -1,13 +1,39 @@
 import React from "react";
 import { Box, Container, Typography } from "@mui/material";
+import { Pagination } from "swiper";
 
+import { styled } from "@mui/system";
 import { Swiper, SwiperSlide } from "swiper/react";
 
+import UpcomingEventsCard from "./UpcomingEventsCard";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
-import UpcomingEventsCard from "./UpcomingEventsCard";
-import { Pagination } from "swiper";
+
+const ImageContainer = styled("div")(({}) => ({
+  "& .swiper": {
+    width: "100%",
+    height: "100%",
+  },
+
+  "& .swiper-slide": {
+    // textAlign: "center",
+    // fontSize: "18px",
+    // display: "flex",
+    // justifyContent: "center",
+    // alignItems: "center",
+
+    width: "300px",
+    height: "auto",
+  },
+
+  "& .swiper-slide img": {
+    display: "block",
+    width: "100%",
+    height: "100%",
+    objectFit: "cover",
+  },
+}));
 
 const data = [
   {
@@ -76,9 +102,8 @@ const UpcomingEvents = () => {
       >
         <Typography variant="poster">Upcoming Events</Typography>
       </Container>
-      <Swiper
-        slidesPerView={4}
-        centeredSlides={true}
+      {/* <Swiper
+        slidesPerView={2}
         spaceBetween={30}
         grabCursor={true}
         pagination={{
@@ -101,12 +126,18 @@ const UpcomingEvents = () => {
           },
         }}
       >
-        {data.map((item, index) => (
-          <SwiperSlide key={index}>
-            <UpcomingEventsCard data={item} />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+        
+      </Swiper> */}
+
+      <ImageContainer>
+        <Swiper slidesPerView={"auto"} spaceBetween={30} className="mySwiper">
+          {data.map((item, index) => (
+            <SwiperSlide key={index}>
+              <UpcomingEventsCard data={item} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </ImageContainer>
     </Box>
   );
 };
