@@ -41,7 +41,7 @@ const NavigationList = () => {
     <NavList>
       <NavLink href="/">Wall of fame</NavLink>
       <NavLink href="/events">Upcoming Events</NavLink>
-      <NavLink href="/">Members</NavLink>
+      <NavLink href="/members">Members</NavLink>
       <Button href="/">Join Us</Button>
     </NavList>
   );

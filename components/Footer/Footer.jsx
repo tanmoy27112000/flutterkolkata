@@ -82,7 +82,7 @@ const Footer = () => {
           <Grid item xs={12} sm={12} md={4}>
             <Stack direction="column" spacing={4}>
               <ImageContainer>
-                <Image src="/assets/logo.png" fill alt="flutter" />
+                <Image src="/assets/logo.png" fill sizes="100vw" alt="flutter" />
               </ImageContainer>
               <IconButton
                 icon="/assets/meetup.svg"
