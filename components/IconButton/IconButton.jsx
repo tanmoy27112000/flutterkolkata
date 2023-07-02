@@ -1,8 +1,6 @@
 import React from "react";
-import Image from "next/image";
 import { styled } from "@mui/system";
-import { Button, Button as MUIButton } from "@mui/material";
-import { lighten } from "polished";
+import { Button as MUIButton } from "@mui/material";
 
 const ButtonStyles = styled(MUIButton)(({ theme }) => ({
   color: `${theme.palette.primary.text}`,

@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { Box, Container, Grid, useMediaQuery } from "@mui/material";
+import { Container, Grid, useMediaQuery } from "@mui/material";
 import { styled, useTheme } from "@mui/material/styles";
 import Image from "next/image";
 import Button from "../Button/Button";
