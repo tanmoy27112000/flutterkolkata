@@ -17,6 +17,7 @@
     "@mui/icons-material": "latest",
     "@mui/material": "latest",
     "@next/font": "latest",
+    "firebase": "^9.23.0",
     "next": "latest",
     "polished": "^4.2.2",
     "prop-types": "latest",

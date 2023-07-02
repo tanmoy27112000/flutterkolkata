@@ -41,7 +41,6 @@ const IconImage = styled("img")(({ theme }) => ({
     // position: "absolute",
     width: "60px",
     height: "60px",
-    left: "-20px",
     position: "absolute",
     left: "-20px",
     top: "50%",

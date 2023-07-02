@@ -74,6 +74,7 @@ const Footer = () => {
         <Grid
           sx={{
             padding: "30px 0 40px",
+            marginTop: 0
           }}
           container
           spacing={4}
