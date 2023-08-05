@@ -1,8 +1,6 @@
 import React from "react";
-import Image from "next/image";
 import { styled } from "@mui/system";
-import { Button, Button as MUIButton } from "@mui/material";
-import { lighten } from "polished";
+import { Button as MUIButton } from "@mui/material";
 
 const ButtonStyles = styled(MUIButton)(({ theme }) => ({
   color: `${theme.palette.primary.text}`,
@@ -41,7 +39,6 @@ const IconImage = styled("img")(({ theme }) => ({
     // position: "absolute",
     width: "60px",
     height: "60px",
-    left: "-20px",
     position: "absolute",
     left: "-20px",
     top: "50%",

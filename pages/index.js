@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Footer, Hero, Navbar, Showcase, UpcomingEvents } from "../components";
+import {Hero, Showcase, UpcomingEvents} from "../components";
 // import Container from "@mui/material/Container";
 // import Typography from "@mui/material/Typography";
 // import Box from "@mui/material/Box";
@@ -10,13 +10,10 @@ import { Footer, Hero, Navbar, Showcase, UpcomingEvents } from "../components";
 export default function Index() {
   return (
     <>
-      <Navbar />
       <Hero />
       <UpcomingEvents />
-
       <Showcase type="poweredBy" />
       <Showcase type="communityPartners" />
-      <Footer />
     </>
   );
 }

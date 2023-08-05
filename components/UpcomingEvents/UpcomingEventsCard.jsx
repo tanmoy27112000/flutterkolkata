@@ -27,16 +27,18 @@ const Name = styled("h4")(({}) => ({
 const Description = styled("p")(({}) => ({}));
 
 const UpcomingEventsCard = ({ data }) => {
-  const { image, name, date, description, link } = data;
+  const { image, name, date, description, link, type } = data;
 
   return (
     <ShowCaseCard>
-      <ShowcaseImageContainer>
-        <Image src={image} alt={name} fill />
-      </ShowcaseImageContainer>
-      <Date>{date}</Date>
-      <Name>{name}</Name>
-      <Description>{description}</Description>
+      {image &&
+        <ShowcaseImageContainer>
+          <Image src={image} alt={name} fill />
+        </ShowcaseImageContainer>
+      }
+      <Date>{date && date} • {type && type}</Date>
+      {name && <Name>{name}</Name>}
+      {description && <Description>{description}</Description>}
       <Button href={link}>Attend</Button>
     </ShowCaseCard>
   );
